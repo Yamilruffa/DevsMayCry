@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/public/CSS/style.css" />
+  <title>Devs May Cry Concesionaria</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/public/img/logoancho.png" alt="Logo Devs May Cry" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Sobre Nosotros</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección Home -->
+    <section id="home" class="section reverse">
+      <div class="text">
+        <h1>Bienvenido a Devs May Cry</h1>
+        <p>¿Necesitas desarrollar un sistema para tu emprendimiento?</p><br>
+        <p>¿Estás buscando mejorar y agilizar un sistema ya existente?</p><br>
+        <p>¿Tenés una idea para desarrollar un juego?</p><br>
+        <p>¡Somos justo lo que necesitás!</p> 
+      </div>
+      <div class="image">
+        <img src="/public/img/PlaceholderLC.png" alt="home" />
+      </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section id="about" class="section">
+      <div class="text">
+        <h2>Sobre nosotros</h2>
+        <p>Somos un grupo de profesionales del Instituto Superior de Formación Técnica N°12 Crucero A.R.A General Belgrano que
+          disfruta de construir cosas. Cada parte del proceso nos resulta interesante, desde el análisis y desarrollo hasta la etapa de pruebas,
+          y finalmente ver el proyecto funcionando. Y como cada uno tiene fortalezas distintas, por eso somos un equipo. </p><br>
+        <p>Conocé a algunos de nuestros miembros:</p>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b/" target="_blank">Yamil Nicolas Ruffa</a></li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/public/img/PlaceholderLC.png" alt="sobre nosotros" />
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="section reverse">
+      <div class="text">
+        <h2>Proyectos</h2>
+        <p>Acá te dejamos algunos de nuestros sistemas desarrollados:</p>
+        <ul>
+          <li><a href="https://proyecto1.example.com" target="_blank">Sistema de Recetas online</a></li>
+          <li><a href="https://proyecto2.example.com" target="_blank">Portfolio de uno de nuestros integrantes</a></li>
+          <li><a href="https://proyecto3.example.com" target="_blank">Sistema de gestión estudiantil para institutos terciarios</a></li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/public/img/PlaceholderLC.png" alt="Proyectos realizados" />
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="section contact">
+      <h2>Contacto</h2>
+      <form action="mailto:DevRuffa@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Correo:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="message">Mensaje:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
