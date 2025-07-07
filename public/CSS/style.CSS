@@ -32,7 +32,7 @@ body {
 
 /* Navbar */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -116,6 +116,10 @@ body {
   margin: 0.625rem 0;
 }
 
+#home.section{
+  padding-top: 10%;
+}
+
 #about.section ul li a {
   color: #F0FF00;
   text-decoration: none;
@@ -138,11 +142,59 @@ body {
 }
 
 .section .image img {
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 80%;
   border-radius: 0.625rem;
   box-shadow: 0 0 0.625rem #000;
 }
+
+/* seccion miembros */
+
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  background-color: #2a2235;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 8px; /* antes tenías 15px o más */
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+.member-info h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.member-info p {
+  margin: 5px 0 0;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.member-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.member-info a:hover {
+  text-decoration: underline; /* opcional: subrayado al pasar el mouse */
+}
+
 
 /* Formulario de contacto */
 form {
@@ -182,13 +234,158 @@ button:hover {
   background-color: #EF5135;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1024px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 5vw;
+  }
+
+  .section.reverse {
+    flex-direction: column;
+  }
+
+  .section .image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .section .text h1,
+  .section .text h2 {
+    font-size: 1.6rem;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .member img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .member-info a {
+    font-size: 1.2em;
+  }
+
+  .member-info p {
+    font-size: 1em;
+  }
+
+  form {
+    width: 90%;
+  }
+
   input, textarea {
-    width: 95%;
-    font-size: 0.9rem;
-    padding-left: 2.2rem;
-    background-size: 1.2rem 1.2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .member img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .member-info a {
+    font-size: 1.1em;
+  }
+
+  .member-info p {
+    font-size: 0.95em;
+  }
+
+  .logo img {
+    width: 80%;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+
+  .section .text h1,
+  .section .text h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Estilo botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Estilos en mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1E1F23;
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Oculto por defecto */
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links.active {
+    display: flex; /* Se muestra cuando está activo */
+  }
+
+  .navbar {
+  flex-direction: row;
+  align-items: center;
+  position: fixed; /* ✅ Fijar en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
   }
 
 }
+
+

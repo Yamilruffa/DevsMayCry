@@ -10,9 +10,12 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="/public/img/Logo.png" alt="Logo Devs May Cry" />
+        <img src="/public/img/Logoancho.png" alt="Logo Devs May Cry" />
       </div>
-      <ul class="nav-links">
+
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Sobre Nosotros</a></li>
         <li><a href="#projects">Proyectos</a></li>
@@ -38,18 +41,22 @@
 
     <!-- Sobre nosotros -->
     <section id="about" class="section">
-      <div class="text">
-        <h2>Sobre nosotros</h2>
-        <p>Somos un grupo de profesionales del Instituto Superior de Formación Técnica N°12 Crucero A.R.A General Belgrano que
-          disfruta de construir cosas. Cada parte del proceso nos resulta interesante, desde el análisis y desarrollo hasta la etapa de pruebas,
-          y finalmente ver el proyecto funcionando. Y como cada uno tiene fortalezas distintas, por eso somos un equipo. </p><br>
-        <p>Conocé a algunos de nuestros miembros:</p>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b/" target="_blank">Yamil Nicolas Ruffa</a></li>
-        </ul>
-      </div>
-      <div class="image">
-        <img src="/public/img/PlaceholderLC.png" alt="sobre nosotros" />
+      <div class="team-members">
+        <div class="member">
+            <img src="/public/img/EliminateMTG.jpg" alt="Yamil Nicolas Ruffa">
+            <div class="member-info">
+              <h3><a href="https://www.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b/" target="_blank">Yamil Nicolas Ruffa</a></h3>
+              <p>Desarrollador backend y entusiasta del diseño limpio. Siempre buscando mejorar procesos y optimizar estructuras.</p>
+            </div>
+        </div>
+
+          <div class="member">
+            <img src="/public/img/facufoto.png" alt="Faculdo Garnica">
+            <div class="member-info">
+              <h3><a href="https://www.linkedin.com/in/facundo-garnica-643311311/" target="_blank">Facundo Garnica</a></h3>
+              <p>Me gustan las sin amor paternal.</p>
+            </div>
+          </div>
       </div>
     </section>
 
@@ -86,5 +93,15 @@
       </form>
     </section>
   </main>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  </script>
+
 </body>
 </html>
