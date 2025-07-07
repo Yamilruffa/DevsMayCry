@@ -4,104 +4,199 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/public/CSS/style.css" />
-  <title>Devs May Cry Concesionaria</title>
+  <title>DMC Software</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="/public/img/Logoancho.png" alt="Logo Devs May Cry" />
-      </div>
+  <!-- Sección en español -->
+  <div id="spanish-section">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="/public/img/Logoancho.png" alt="Logo Devs May Cry" />
+        </div>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><button id="lang-toggle" class="lang-button">English</button></li>
+        </ul>
+      </nav>
+    </header>
 
-      <button class="hamburger" id="hamburger">&#9776;</button>
-      
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+      <!-- Sección Home -->
+      <section id="home" class="section reverse">
+        <div class="text">
+          <h1>Bienvenido a Devs May Cry</h1>
+          <p>¿Necesitas desarrollar un sistema para tu emprendimiento?</p><br>
+          <p>¿Estás buscando mejorar y agilizar un sistema ya existente?</p><br>
+          <p>¿Tenés una idea para desarrollar un juego?</p><br>
+          <p>¡Somos justo lo que necesitás!</p>
+        </div>
+        <div class="image">
+          <img src="/public/img/Logo.png" alt="home" id="logobienvenido"/>
+        </div>
+      </section>
 
-  <main>
-    <!-- Sección Home -->
-    <section id="home" class="section reverse">
-      <div class="text">
-        <h1>Bienvenido a Devs May Cry</h1>
-        <p>¿Necesitas desarrollar un sistema para tu emprendimiento?</p><br>
-        <p>¿Estás buscando mejorar y agilizar un sistema ya existente?</p><br>
-        <p>¿Tenés una idea para desarrollar un juego?</p><br>
-        <p>¡Somos justo lo que necesitás!</p> 
-      </div>
-      <div class="image">
-        <img src="/public/img/PlaceholderLC.png" alt="home" />
-      </div>
-    </section>
-
-    <!-- Sobre nosotros -->
-    <section id="about" class="section">
-      <div class="team-members">
-        <div class="member">
+      <!-- Sobre nosotros -->
+      <section id="about" class="section">
+        <div class="team-members">
+          <div class="member">
             <img src="/public/img/EliminateMTG.jpg" alt="Yamil Nicolas Ruffa">
             <div class="member-info">
               <h3><a href="https://www.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b/" target="_blank">Yamil Nicolas Ruffa</a></h3>
-              <p>Desarrollador backend y entusiasta del diseño limpio. Siempre buscando mejorar procesos y optimizar estructuras.</p>
+              <p>Me gusta el dinero.</p>
             </div>
-        </div>
+          </div>
 
           <div class="member">
-            <img src="/public/img/facufoto.png" alt="Faculdo Garnica">
+            <img src="/public/img/Determination.jpg" alt="Faculdo Garnica">
             <div class="member-info">
               <h3><a href="https://www.linkedin.com/in/facundo-garnica-643311311/" target="_blank">Facundo Garnica</a></h3>
               <p>Me gustan las sin amor paternal.</p>
             </div>
           </div>
-      </div>
-    </section>
 
-    <!-- Proyectos -->
-    <section id="projects" class="section reverse">
-      <div class="text">
-        <h2>Proyectos</h2>
-        <p>Acá te dejamos algunos de nuestros sistemas desarrollados:</p>
-        <ul>
-          <li><a href="https://proyecto1.example.com" target="_blank">Sistema de Recetas online</a></li>
-          <li><a href="https://proyecto2.example.com" target="_blank">Portfolio de uno de nuestros integrantes</a></li>
-          <li><a href="https://proyecto3.example.com" target="_blank">Sistema de gestión estudiantil para institutos terciarios</a></li>
+          <div class="member">
+            <img src="/public/img/lautaro.png" alt="Lautaro Fernandez-Puga">
+            <div class="member-info">
+              <h3><a href="#" target="_blank">Lautaro Fernandez-Puga</a></h3>
+              <p>Bip Bup Bop.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyectos -->
+      <section id="projects" class="section reverse">
+        <div class="text">
+          <h2>Proyectos</h2>
+          <p>Acá te dejamos algunos de nuestros sistemas desarrollados:</p>
+          <ul>
+            <li><a href="https://proyecto1.example.com" target="_blank">Sistema de Recetas online</a></li>
+            <li><a href="https://proyecto2.example.com" target="_blank">Portfolio de uno de nuestros integrantes</a></li>
+            <li><a href="https://proyecto3.example.com" target="_blank">Sistema de gestión estudiantil para institutos terciarios</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="/public/img/PlaceholderLC.png" alt="Proyectos realizados" />
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contact" class="section contact">
+        <h2>Contacto</h2>
+        <form action="mailto:DevRuffa@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Nombre:</label><br>
+          <input type="text" id="name" name="name" required><br>
+
+          <label for="email">Correo:</label><br>
+          <input type="email" id="email" name="email" required><br>
+
+          <label for="message">Mensaje:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Sección en inglés -->
+  <div id="english-section" style="display: none;">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="/public/img/Logoancho.png" alt="Logo Devs May Cry" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="lang-toggle" class="lang-button">Spanish</button></li>
         </ul>
-      </div>
-      <div class="image">
-        <img src="/public/img/PlaceholderLC.png" alt="Proyectos realizados" />
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- Contacto -->
-    <section id="contact" class="section contact">
-      <h2>Contacto</h2>
-      <form action="mailto:DevRuffa@gmail.com" method="POST" enctype="text/plain">
-        <label for="name">Nombre:</label><br>
-        <input type="text" id="name" name="name" required><br>
+    <main>
+      <section id="home" class="section reverse">
+        <div class="text">
+          <h1>Welcome to Devs May Cry</h1>
+          <p>Do you need to develop a system for your entrepreneurship?</p><br>
+          <p>Are you looking to improve and elevate an existing system?</p><br>
+          <p>Do you have an idea to develop a game?</p><br>
+          <p>We are just what you need!</p>
+        </div>
+        <div class="image">
+          <img src="/public/img/Logo.png" alt="home" id="logobienvenido"/>
+        </div>
+      </section>
 
-        <label for="email">Correo:</label><br>
-        <input type="email" id="email" name="email" required><br>
+      <section id="about" class="section">
+        <div class="team-members">
+          <div class="member">
+            <img src="/public/img/EliminateMTG.jpg" alt="Yamil Nicolas Ruffa">
+            <div class="member-info">
+              <h3><a href="https://www.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b/" target="_blank">Yamil Nicolas Ruffa</a></h3>
+              <p>I like money.</p>
+            </div>
+          </div>
 
-        <label for="message">Mensaje:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br>
+          <div class="member">
+            <img src="/public/img/Determination.jpg" alt="Faculdo Garnica">
+            <div class="member-info">
+              <h3><a href="https://www.linkedin.com/in/facundo-garnica-643311311/" target="_blank">Facundo Garnica</a></h3>
+              <p>I like fatherless things.</p>
+            </div>
+          </div>
 
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
+          <div class="member">
+            <img src="/public/img/lautaro.png" alt="Lautaro Fernandez-Puga">
+            <div class="member-info">
+              <h3><a href="#" target="_blank">Lautaro Fernandez-Puga</a></h3>
+              <p>Bip Bup Bop.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+      <section id="projects" class="section reverse">
+        <div class="text">
+          <h2>Projects</h2>
+          <p>Here are some of our developed systems:</p>
+          <ul>
+            <li><a href="https://proyecto1.example.com" target="_blank">Online Cooking Recipe System</a></li>
+            <li><a href="https://proyecto2.example.com" target="_blank">Portfolio of one of our members</a></li>
+            <li><a href="https://proyecto3.example.com" target="_blank">Student management system for technical institutes</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="/public/img/PlaceholderLC.png" alt="Projects" />
+        </div>
+      </section>
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-  </script>
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <form action="mailto:DevRuffa@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
 
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/public/JAVASCRIPT/SCRIPTS.JS"></script>
 </body>
 </html>

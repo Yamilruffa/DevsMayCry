@@ -30,6 +30,30 @@ body {
   line-height: 1.6;
 }
 
+/*boton de idioma*/
+.lang-button {
+  background-color: #F0FF00;
+  color: #000000;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 20px;
+  cursor: pointer;
+  width: 5rem;
+}
+
+
+
+#logobienvenido {
+  width: 40vw;
+  height: 15vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -104,7 +128,7 @@ body {
 .section .text h1,
 .section .text h2 {
   margin-bottom: 1.25rem;
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 
 .section .text ul {
