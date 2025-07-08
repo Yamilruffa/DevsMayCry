@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtns = document.querySelectorAll('#lang-toggle');
   const spanishSection = document.getElementById('spanish-section');
@@ -17,18 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         spanishSection.style.display = 'block';
         englishSection.style.display = 'none';
-        toggleBtns.forEach(b => b.textContent = 'Ingles');
+        toggleBtns.forEach(b => b.textContent = 'Inglés');
         currentLang = 'es';
       }
     });
   });
 
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  if (hamburger && navLinks) {
+  // Selecciona todos los botones de hamburguesa y asigna el evento
+  const hamburgers = document.querySelectorAll('.hamburger');
+  hamburgers.forEach(hamburger => {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      const nav = hamburger.nextElementSibling;
+      if (nav && nav.classList.contains('nav-links')) {
+        nav.classList.toggle('active');
+      }
     });
-  }
+  });
 });
