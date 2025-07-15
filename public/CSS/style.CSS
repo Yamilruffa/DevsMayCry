@@ -34,13 +34,11 @@ body {
   background-color: #F0FF00;
   color: #000000;
   border: none;
-  padding: 8px 12px;
-  margin-left: 20px;
+  padding: 0.5em 0.75em;
+  margin-left: 1.25em;
   cursor: pointer;
   width: 5rem;
 }
-
-
 
 #logobienvenido {
   width: 40vw;
@@ -48,10 +46,6 @@ body {
   object-fit: cover;
   object-position: center;
 }
-
-
-
-
 
 /* Navbar */
 .navbar {
@@ -105,8 +99,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
-  padding: 5rem 10vw;
-  border-bottom: 0.125rem solid #444;
+  padding: 5rem 5vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 .section.reverse {
@@ -140,11 +135,27 @@ body {
   margin: 0.625rem 0;
 }
 
-#home.section{
+#home.section {
   padding-top: 10%;
 }
 
-#about.section ul li a {
+#about-en.section,
+#about-es.section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 4rem 5vw;
+}
+
+#about-en .team-members,
+#about-es .team-members {
+  width: 100%;
+  max-width: 100%;
+}
+
+#about-en.section ul li a,
+#about-es.section ul li a {
   color: #F0FF00;
   text-decoration: none;
   font-weight: bold;
@@ -166,40 +177,53 @@ body {
 }
 
 .section .image img {
-  width: 80%;
-  max-width: 80%;
+  width: 100%;
+  max-width: 100%;
   border-radius: 0.625rem;
   box-shadow: 0 0 0.625rem #000;
+  object-fit: contain;
 }
 
 /* seccion miembros */
-
-
-
 .team-members {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .member {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   background-color: #2a2235;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 2vw;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 100%;
+  overflow: hidden;
+  gap: 2rem;
 }
 
 .member img {
-  width: 15rem;
-  height: 15rem;
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  max-height: 100%;
   object-fit: cover;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin: 0;
   border: 2px solid #ccc;
   border-radius: 4px;
+}
+
+
+.member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 200px;
 }
 
 .member-info h3 {
@@ -220,23 +244,22 @@ body {
 }
 
 .member-info a:hover {
-  text-decoration: underline; /* opcional: subrayado al pasar el mouse */
+  text-decoration: underline;
 }
-
 
 .tecnologias,
 .redes {
   display: flex;
-  gap: 1.2em;
-  margin-top: 1em;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .tecnologias img,
 .redes img {
-  width: 3em;
-  height: 3em;
+  width: clamp(1.5rem, 5vw, 3rem);
+  height: clamp(1.5rem, 5vw, 3rem);
   border-radius: 50%;
-  border: 0.15em solid #ccc;
   transition: transform 0.2s ease, filter 0.2s ease;
   filter: brightness(1.1);
   object-fit: contain;
@@ -248,7 +271,6 @@ body {
   transform: scale(1.2);
   filter: brightness(1.2);
 }
-
 
 /* Formulario de contacto */
 form {
@@ -272,7 +294,6 @@ input, textarea {
   background-size: 1.5rem 1.5rem;
 }
 
-
 button {
   background-color: #F0FF00;
   font-family: 'FuenteUndertale';
@@ -288,8 +309,21 @@ button:hover {
   background-color: #EF5135;
 }
 
+/* Estilo botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+
 /* ========== RESPONSIVE DESIGN ========== */
 
+/* === Tablets y notebooks medianos (<= 1024px) === */
 @media (max-width: 1024px) {
   .section {
     flex-direction: column;
@@ -310,8 +344,68 @@ button:hover {
     gap: 1.2rem;
     font-size: 1.4rem;
   }
+
+  #about-es .team-members,
+  #about-en .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about-es .member,
+  #about-en .member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  #about-es .member img,
+  #about-en .member img {
+    margin: 0 0 1rem 0;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+  }
+
+  #about-es .member-info h1,
+  #about-en .member-info h1 {
+    font-size: 1.4rem;
+  }
+
+  #about-es .member-info p,
+  #about-en .member-info p {
+    font-size: 1.2rem;
+  }
+
+  #about-es .tecnologias,
+  #about-en .tecnologias,
+  #about-es .redes,
+  #about-en .redes {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  #about-es .tecnologias img,
+  #about-en .tecnologias img,
+  #about-es .redes img,
+  #about-en .redes img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+  }
+
+  #about-es .member-info,
+  #about-en .member-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
+/* === Tablets pequeños y celulares grandes (<= 768px) === */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -363,8 +457,56 @@ button:hover {
   input, textarea {
     width: 100%;
   }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1E1F23;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #about-es .member-info,
+  #about-en .member-info {
+    padding: 1rem 0;
+  }
+
+  #about-es .tecnologias img,
+  #about-en .tecnologias img,
+  #about-es .redes img,
+  #about-en .redes img {
+    object-fit: contain;
+  }
 }
 
+/* === Celulares chicos (<= 480px) === */
 @media (max-width: 480px) {
   body {
     font-size: 1rem;
@@ -395,111 +537,42 @@ button:hover {
   .section .text h2 {
     font-size: 1.3rem;
   }
-}
 
-/* Estilo botón hamburguesa */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* Estilos en mobile */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    z-index: 1100;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #1E1F23;
-    flex-direction: column;
-    width: 100%;
-    display: none; /* Oculto por defecto */
-    gap: 1rem;
-    padding: 1rem 2rem;
-  }
-
-  .nav-links.active {
-    display: flex; /* Se muestra cuando está activo */
-  }
-
-  .navbar {
-  flex-direction: row;
-  align-items: center;
-  position: fixed; /* ✅ Fijar en la parte superior */
-  top: 0;
-  left: 0;
-  right: 0;
-  }
-
-}
-
-@media (max-width: 1024px) {
-  #about .team-members {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #about .member {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  #about .member img {
-    margin: 0 0 1rem 0;
-    width: 12rem;
-    height: 12rem;
-  }
-
-  #about .member-info h1 {
-    font-size: 1.4rem;
-  }
-
-  #about .member-info p {
-    font-size: 1.2rem;
-  }
-
-  #about .tecnologias,
-  #about .redes {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  #about .tecnologias img,
-  #about .redes img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #about .member img {
+  #about-es .member img,
+  #about-en .member img {
     width: 8rem;
     height: 8rem;
   }
 
-  #about .member-info h1 {
+  #about-es .member-info h1,
+  #about-en .member-info h1 {
     font-size: 1.1rem;
   }
 
-  #about .member-info p {
+  #about-es .member-info p,
+  #about-en .member-info p {
     font-size: 1rem;
   }
 
-  #about .tecnologias img,
-  #about .redes img {
+  #about-es .tecnologias img,
+  #about-en .tecnologias img,
+  #about-es .redes img,
+  #about-en .redes img {
     width: 2rem;
     height: 2rem;
+  }
+
+  #about-es .member-info,
+  #about-en .member-info {
+    padding: 0.5rem;
+  }
+
+  #about-es .tecnologias,
+  #about-en .tecnologias,
+  #about-es .redes,
+  #about-en .redes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
